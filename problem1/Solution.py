@@ -10,21 +10,18 @@ def find_four(s):
 def main():
     t = int(input())
 
-    for i in range(1,t+1):
+    for i in range(1, t+1):
         n = input()
         a = list(n)
-        b = 0
 
         idx = find_four(a)
 
         while idx > -1:
             a[idx] = 2
-
-            b += 2*10**(len(a)-idx-1)
-
             idx = find_four(a)
 
-        a = map(str, a)
+        a = ''.join(map(str, a))
+        b = int(n) - int(a)
         print(f'Case #{i}: {"".join(a)} {str(b)}')
 
 
