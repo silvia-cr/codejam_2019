@@ -22,10 +22,8 @@ def main():
 
         a = ''.join(map(str, a))
         b = int(n) - int(a)
-        print(f'Case #{i}: {"".join(a)} {str(b)}')
+        print('Case #{0}: {1} {2}'.format(i, a, b))
 
 
 if __name__ == '__main__':
     main()
-
-
