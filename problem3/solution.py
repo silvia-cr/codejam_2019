@@ -1,16 +1,4 @@
-def is_prime(n):
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-
-    return True
-
-
-def get_prime_factors(result):
-    for i in range(2, result):
-        if result % i == 0 and is_prime(i):
-            return i, result/i
-    return 0, 0
+from math import gcd
 
 
 def main():
@@ -26,15 +14,11 @@ def main():
         if len(ciphertext_values) != l:
             raise Exception
 
-        first, second = get_prime_factors(int(ciphertext_values[0]))
-        prime_numbers = list()
+        greatest_common_divisor = gcd(int(ciphertext_values[0]), int(ciphertext_values[1]))
 
-        if int(ciphertext_values[1]) % first == 0:
-            prime_numbers.append(second)
-            prime_numbers.append(first)
-        else:
-            prime_numbers.append(first)
-            prime_numbers.append(second)
+        prime_numbers = list()
+        prime_numbers.append(int(ciphertext_values[0])/greatest_common_divisor)
+        prime_numbers.append(greatest_common_divisor)
 
         for val in ciphertext_values[1:]:
             prime_numbers.append(int(val)/prime_numbers[-1])
