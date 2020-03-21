@@ -9,7 +9,7 @@ def is_prime(n):
 def get_prime_factors(result):
     for i in range(2, result):
         if result % i == 0 and is_prime(i):
-            return i, result//i
+            return i, result/i
     return 0, 0
 
 
@@ -37,7 +37,7 @@ def main():
             prime_numbers.append(second)
 
         for val in ciphertext_values[1:]:
-            prime_numbers.append(int(val)//prime_numbers[-1])
+            prime_numbers.append(int(val)/prime_numbers[-1])
 
         alphabet = sorted(list(set((prime_numbers))))
         word = list()
