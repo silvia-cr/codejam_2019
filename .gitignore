@@ -3,4 +3,4 @@
 Pipfile.lock
 *.in
 *.out
-/problem4/testing_tool.py
+/qualification_round/problem4/*
